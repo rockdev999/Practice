@@ -37,8 +37,8 @@ function App() {
   },[])
 
   const handleClick = () =>{
-      // inputRef.current.value = 'Probando'
-      // inputRef.current.focus()
+      inputRef.current.value = 'Probando'
+      inputRef.current.focus()
   }
   return (
     <div>
@@ -48,7 +48,7 @@ function App() {
         <input 
           type="text" 
           onChange={(e)=>{
-            setMessage(e.target.value)
+            (e.target.value)
           }}
           ref={inputRef}
         />
