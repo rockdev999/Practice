@@ -1,16 +1,21 @@
 import { Formik } from 'formik'
 import '../App.css'
-export const Form:React.FC = ()=>{
+export const FormLogin:React.FC = ()=>{
+    
     return(
         <>
             <Formik
+                // valores iniciales del valu
+                initialValues={{
+                    name:'Carlos'
+                }}
                 onSubmit={()=>{
                     console.log('form send')
                 }}
             >
-                {({handleSubmit})=>(
+                {({handleSubmit, values})=>(
                     <form action="" onSubmit={handleSubmit}>
-                        <div>
+                        <div> 
                             <label htmlFor="name">Name</label>
                             <input type="text" id='name' name='name'/>
                         </div>

@@ -6,6 +6,7 @@ import './App.css'
 export const App = () => {
   return(
     <BrowserRouter>
+
       <Routes>
         <Route path='/form-login' element={<FormLogin/>}/>
         <Route path='/form-register' element={<FormRegister/>}/>
@@ -17,16 +18,6 @@ export const App = () => {
 // user
 // password
 
-// formulario de register (first name, last name)
-// Nombre 
-// apellido
-// correo
-// contrasena
-// verify password
-// teléfono
-// Fecha de nacimiento
-// Género
-// Dirección
 
 // validation 
 // study formik una libreria meanejar el estado del formulario, srive para condensar todo en un objeto
