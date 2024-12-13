@@ -15,10 +15,6 @@ export const App = () => {
     </BrowserRouter>
   );
 };
-// formulario login
-// user
-// password
-
-// validation
-// study formik una libreria meanejar el estado del formulario, srive para condensar todo en un objeto
-// yup es un validador de cada campo
+// graficas
+// mapboks
+// librerias puras de js, mejor 
