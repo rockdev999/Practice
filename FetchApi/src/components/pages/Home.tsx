@@ -1,37 +1,18 @@
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
+import { useFetch } from "../hooks/useFetch";
 
 const apiURL = 'https://sample-dogs-api.netlify.app/api/v1/';
-interface DogsSchema {
-    _id:string,
-    name: string,
-    breed: string,
-    image: string,
-    color: string,
-    age: number,
-    favoriteToy: string,
-    personality: string,
-    bio: string,
-}
 
 export const Home = ()=>{
-    const [dogs, setDogs] = useState<DogsSchema[]>([]);
-    const getDogs = async () => {
-        try{
-            const result = await fetch(`${apiURL}dogs`);
-            const data = await result.json();
-            setDogs(data)
-        } catch(error){
-            console.error('Error: ',error)
-        }
-    }
-    useEffect(()=>{
-        getDogs()
-    },[])
+    const [dogs] = useFetch(apiURL)
+    
     return(
         <div>
             {dogs.map((dog)=>(
-                <div key={dog._id}>
-                    {dog.name}
+                <div key={dog._id} className="cardDog">
+                    <img src={dog.image} alt={`Dog ${dog.name}`} />
+                    <h2>{dog.name}</h2>
+                    <div>{dog.age}</div>
                 </div>
             ))}
         </div>

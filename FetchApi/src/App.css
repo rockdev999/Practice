@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+.cardDog{
+  display: grid;
+  grid-column: 2;
+  grid-row: 3;
+}
+img {
+  width: 200px;
+  height: 250px;
+}
