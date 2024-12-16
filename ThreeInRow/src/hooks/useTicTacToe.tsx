@@ -16,6 +16,8 @@ export const useTicTacToe = () => {
       let copyTicTacToe = [...ticTacToe];
       if (ticTacToe[position] === undefined) {
         copyTicTacToe[position] = player;
+        // uso de estados, cuidado!!! 
+        // trabajar en solo un estado
         setTicTacToe(copyTicTacToe);
         setCurrentPlayer(!currentPlayer);
       }
@@ -45,6 +47,7 @@ export const useTicTacToe = () => {
     if (ticTacToe[0] && ticTacToe[3] && ticTacToe[6]) {
       // console.log('match 11')
       setWinner(1);
+      // poner llaves despues del else para que sea mas legible 
     } else if (
       ticTacToe[0] !== undefined &&
       ticTacToe[3] !== undefined &&
@@ -72,6 +75,7 @@ export const useTicTacToe = () => {
     // 3RA Validation
     if (ticTacToe[2] && ticTacToe[5] && ticTacToe[8]) {
       // console.log('match 31')
+      // USAR EL RETURN
       setWinner(1);
     } else if (
       ticTacToe[2] !== undefined &&

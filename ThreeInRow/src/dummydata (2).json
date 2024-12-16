@@ -1,0 +1,307 @@
+[
+    {
+      "id": "672e614e55d40758f25d9be8",
+      "isActive": true,
+      "balance": "$2,224.88",
+      "age": 36,
+      "eyeColor": "blue",
+      "name": "Bates Gallagher",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Parrish Weiss"
+        },
+        {
+          "id": 1,
+          "name": "Selma Tanner"
+        },
+        {
+          "id": 2,
+          "name": "Emilia Mills"
+        },
+        {
+          "id": 3,
+          "name": "Bridgette Maldonado"
+        },
+        {
+          "id": 4,
+          "name": "Greene Beasley"
+        },
+        {
+          "id": 5,
+          "name": "Levy Mcdaniel"
+        },
+        {
+          "id": 6,
+          "name": "Perkins Lane"
+        },
+        {
+          "id": 7,
+          "name": "Ball Luna"
+        },
+        {
+          "id": 8,
+          "name": "Cruz Shepard"
+        }
+      ],
+      "favoriteFruit": "strawberry"
+    },
+    {
+      "id": "672e614e017aa568146d42dc",
+      "isActive": false,
+      "balance": "$1,604.56",
+      "age": 25,
+      "eyeColor": "green",
+      "name": "Marisol Lowe",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Finley Johns"
+        },
+        {
+          "id": 1,
+          "name": "Strong Wilkinson"
+        },
+        {
+          "id": 2,
+          "name": "Noreen Neal"
+        },
+        {
+          "id": 3,
+          "name": "Blanche Obrien"
+        },
+        {
+          "id": 4,
+          "name": "Cathy Sweeney"
+        },
+        {
+          "id": 5,
+          "name": "Lynnette Drake"
+        }
+      ],
+      "favoriteFruit": "banana"
+    },
+    {
+      "id": "672e614ebf55f876db1b5279",
+      "isActive": true,
+      "balance": "$1,576.31",
+      "age": 27,
+      "eyeColor": "green",
+      "name": "Christine Morrow",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Claudine Ferguson"
+        },
+        {
+          "id": 1,
+          "name": "Mcintyre Larsen"
+        },
+        {
+          "id": 2,
+          "name": "Dianna Pena"
+        },
+        {
+          "id": 3,
+          "name": "Dunn Hawkins"
+        },
+        {
+          "id": 4,
+          "name": "Kellie Pitts"
+        },
+        {
+          "id": 5,
+          "name": "Kari William"
+        },
+        {
+          "id": 6,
+          "name": "Tessa Reese"
+        },
+        {
+          "id": 7,
+          "name": "Rowena Gilmore"
+        },
+        {
+          "id": 8,
+          "name": "Harriet Barber"
+        },
+        {
+          "id": 9,
+          "name": "Yang Chen"
+        }
+      ],
+      "favoriteFruit": "apple"
+    },
+    {
+      "id": "672e614e84ed245b74bf0dda",
+      "isActive": false,
+      "balance": "$1,149.29",
+      "age": 24,
+      "eyeColor": "blue",
+      "name": "Mavis Powers",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Newton Howell"
+        },
+        {
+          "id": 1,
+          "name": "Brock Burris"
+        },
+        {
+          "id": 2,
+          "name": "Sarah Navarro"
+        },
+        {
+          "id": 3,
+          "name": "Katina Stevens"
+        },
+        {
+          "id": 4,
+          "name": "Tia Chan"
+        },
+        {
+          "id": 5,
+          "name": "Hester Blankenship"
+        },
+        {
+          "id": 6,
+          "name": "Sadie Stokes"
+        },
+        {
+          "id": 7,
+          "name": "Joyce Graves"
+        },
+        {
+          "id": 8,
+          "name": "Davis Snow"
+        }
+      ],
+      "favoriteFruit": "apple"
+    },
+    {
+      "id": "672e614e07a5b5dbce2ba3f5",
+      "isActive": true,
+      "balance": "$1,025.88",
+      "age": 28,
+      "eyeColor": "blue",
+      "name": "Valdez Stanley",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Sargent Price"
+        },
+        {
+          "id": 1,
+          "name": "Ramona Rodgers"
+        },
+        {
+          "id": 2,
+          "name": "Lisa Hopper"
+        },
+        {
+          "id": 3,
+          "name": "Jacqueline Farrell"
+        },
+        {
+          "id": 4,
+          "name": "Leonor Black"
+        },
+        {
+          "id": 5,
+          "name": "Lilia Monroe"
+        }
+      ],
+      "favoriteFruit": "strawberry"
+    },
+    {
+      "id": "672e614e5c1ac8f866447727",
+      "isActive": false,
+      "balance": "$2,077.74",
+      "age": 29,
+      "eyeColor": "blue",
+      "name": "Ray Holder",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Alberta Nolan"
+        },
+        {
+          "id": 1,
+          "name": "Lilly Rivera"
+        },
+        {
+          "id": 2,
+          "name": "Sherrie Small"
+        },
+        {
+          "id": 3,
+          "name": "Marilyn Petty"
+        },
+        {
+          "id": 4,
+          "name": "Bennett Alvarez"
+        },
+        {
+          "id": 5,
+          "name": "Adrian Dawson"
+        },
+        {
+          "id": 6,
+          "name": "Mccarty Trujillo"
+        }
+      ],
+      "favoriteFruit": "banana"
+    },
+    {
+      "id": "672e614ef6c452ad8deaaabd",
+      "isActive": true,
+      "balance": "$2,478.78",
+      "age": 38,
+      "eyeColor": "blue",
+      "name": "Cooke Rivas",
+      "friends": [
+        {
+          "id": 0,
+          "name": "Schneider Rich"
+        },
+        {
+          "id": 1,
+          "name": "Francine Erickson"
+        },
+        {
+          "id": 2,
+          "name": "Campos Macias"
+        },
+        {
+          "id": 3,
+          "name": "Lucile Browning"
+        },
+        {
+          "id": 4,
+          "name": "Marisa Mcneil"
+        },
+        {
+          "id": 5,
+          "name": "Kay Bentley"
+        },
+        {
+          "id": 6,
+          "name": "Shanna Donaldson"
+        },
+        {
+          "id": 7,
+          "name": "Finch Santana"
+        },
+        {
+          "id": 8,
+          "name": "Nanette Haynes"
+        },
+        {
+          "id": 9,
+          "name": "Rachael Whitney"
+        }
+      ],
+      "favoriteFruit": "apple"
+    }
+  ]

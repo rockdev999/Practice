@@ -1,0 +1,23 @@
+.board {
+    /* background-color: aqua; */
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+table{
+    width: 90%;
+    border: 5px solid black;
+}
+thead{
+    width: 100%;
+}
+.tr_header{
+    background-color: gray;        
+}
+th{
+    border-right: 2px black solid;
+}
+td{
+    border-top: 2px black solid;
+    border-right: 2px black solid;
+}

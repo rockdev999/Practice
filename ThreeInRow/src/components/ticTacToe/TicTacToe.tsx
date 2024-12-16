@@ -1,4 +1,4 @@
-import { useTicTacToe } from "../custom/useTicTacToe";
+import { useTicTacToe } from "../../hooks/useTicTacToe";
 
 export const TicTacToe = () => {
   const { currentPlayer, ticTacToe, checkBox, resetThreeinRow, chooseWinner } =
@@ -9,6 +9,7 @@ export const TicTacToe = () => {
         <div className="player_turn">
           Player {currentPlayer ? "One" : "Two"}
         </div>
+        {/* USAR MAP PARA MEJORAR */}
         <div>
           <button
             className="btn"
@@ -93,3 +94,7 @@ export const TicTacToe = () => {
     </>
   );
 };
+// Agregar una tabla desde cero
+// cabezeras Row
+// filtro ascente descente y un filtro por la primeras columnas
+// 
