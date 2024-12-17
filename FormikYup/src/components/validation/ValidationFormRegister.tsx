@@ -1,5 +1,6 @@
 import * as Yup from 'yup'
-
+// SOLO USAR ETIQUETAS TS
+// COLOCAR DIRECTO
 export const ValidationFormRegister = () =>{
     const validationFormRegister = Yup.object({
         firstName: Yup.string()

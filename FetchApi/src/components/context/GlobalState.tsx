@@ -1,17 +1,17 @@
-import { createContext, ReactNode, useState } from "react";
+// import { createContext, ReactNode, useState } from "react";
 
-const apiURL = 'https://sample-dogs-api.netlify.app/api/v1/';
-export const GlobalState = createContext<string>('');
+// const apiURL = 'https://sample-dogs-api.netlify.app/api/v1/';
+// export const GlobalState = createContext<string>('');
 
-export const GlobalStateProvider=({children}:{children : ReactNode})=>{
-    const dogsURL= apiURL;
+// export const GlobalStateProvider=({children}:{children : ReactNode})=>{
+//     const dogsURL= apiURL;
 
-    return(
-        <GlobalState.Provider value={dogsURL}>
-            {children}
-        </GlobalState.Provider>
-    )
-}
+//     return(
+//         <GlobalState.Provider value={dogsURL}>
+//             {children}
+//         </GlobalState.Provider>
+//     )
+// }
 // import { createContext, ReactNode, useState } from "react";
 
 // // dogs structure

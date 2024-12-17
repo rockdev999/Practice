@@ -1,10 +1,9 @@
-// import { useEffect, useState } from "react"
 import { useFetch } from "../hooks/useFetch";
 
-const apiURL = 'https://sample-dogs-api.netlify.app/api/v1/';
+const apiURL = 'https://sample-dogs-api.netlify.app/api/v1';
 
 export const Home = ()=>{
-    const [dogs] = useFetch(apiURL)
+    const {dogs} = useFetch(apiURL)
     
     return(
         <div>
