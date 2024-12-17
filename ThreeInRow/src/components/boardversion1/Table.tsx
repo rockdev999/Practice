@@ -3,6 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { TbSortAscending2Filled } from "react-icons/tb";
 import { TbSortAscendingShapesFilled } from "react-icons/tb";
+import './board.css'
 
 interface Friends{
     id:number,
@@ -44,7 +45,7 @@ export const Table:React.FC<Props> = ({data}) =>{
         return data.sort((a :User,b: User)=>(a[sort.key]>b[sort.key]? -1:1));
     }
     return(
-        <table>
+        <table className='table'>
             <thead>
                 <tr className='tr_header'>
                     <th onClick={()=>handleSortClick('name')}>Name

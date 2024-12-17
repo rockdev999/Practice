@@ -1,9 +1,9 @@
-import React, { useMemo, useState } from 'react'
-import '../components/boardversion1/board.css'
-import { Table } from '../components/boardversion1/Table'
 import data from '../dummydata (2).json'
+import { useMemo, useState } from 'react'
+import { Table } from '../components/boardversion1/Table'
+import '../components/boardversion1/board.css'
 
-export const BoardVersion1:React.FC = () => {
+export const BoardVersion1 = () => {
     const [inputFilter, setInputFilter] = useState<string>('');
 
     const filterData = useMemo(()=>{
@@ -17,13 +17,11 @@ export const BoardVersion1:React.FC = () => {
 
     return(
         <div className='board'>
-            <div>
-                <input 
-                    type="text"
-                    value={inputFilter}
-                    onChange={(event)=>{setInputFilter(event.target.value)}} 
-                />
-            </div>
+            <input 
+                type="text"
+                value={inputFilter}
+                onChange={(event)=>{setInputFilter(event.target.value)}} 
+            />
             <Table data={filterData}/>
         </div>
     )
