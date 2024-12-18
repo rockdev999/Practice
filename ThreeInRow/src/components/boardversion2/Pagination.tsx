@@ -13,7 +13,7 @@ export const Pagination = ({currentPage, setCurrentPage, numPages}:PropsPaginati
         if(currentPage!==1) setCurrentPage( currentPage - 1)
     }
     return(
-        <div>
+        <div className="pagination">
             <h3 onClick={prev}>Prev</h3>
             <h3>{currentPage} / {numPages}</h3>
             <h3 onClick={next}>Next</h3>

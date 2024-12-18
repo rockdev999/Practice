@@ -34,3 +34,23 @@ th {
 tr:nth-child(even) {
     background-color: #b9babb;
 }
+.filter{
+    margin-left: 200px;
+    margin-right: 150px;
+    display: flex;
+    gap: 20px;
+}
+.filterRange{
+    display: flex;
+    gap: 5px;
+}
+.input_age{
+    width: 100px;
+}
+.input_balance{
+    width: 120px;
+}
+.pagination {
+    display: flex;
+    gap:10px;
+}

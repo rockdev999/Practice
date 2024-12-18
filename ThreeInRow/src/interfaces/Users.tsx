@@ -23,7 +23,6 @@ export type Sort = {
     key: keyof User,
     direction:string,
 }
-// camibarn nombre
 export const columnsUser: columnInterface<User>[] = [
     {
         dataIndex: 'name',
@@ -68,3 +67,7 @@ export const columnsUser: columnInterface<User>[] = [
     },
 ]
 
+export interface selectList {
+    parent: string,
+    friends: Friends[],
+}

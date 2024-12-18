@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { GeneralProps, Sort } from "../../interfaces/Columns";
 import { TbSortAscending2Filled, TbSortAscendingShapesFilled } from "react-icons/tb";
+import { MultiCheckSelect } from "./MultiCheckSelect";
+import { User } from "../../interfaces/Users";
 
+// asc, desc, como constantes
 export const Table = <T,>({ data, columns }: GeneralProps<T>) => {
   const [sort, setSort] = useState<Sort<T>>({ key: columns[0].dataIndex, direction: "asc" });
 
@@ -19,6 +22,13 @@ export const Table = <T,>({ data, columns }: GeneralProps<T>) => {
     }
     return data.sort((userOne, userTwo)=>(userOne[sort.key]>userTwo[sort.key]? -1:1));
   };
+
+  // const clickSelect = (row: T) =>{
+  //   console.log(row)
+  //   return (
+  //     // <MultiCheckSelect row/>
+  //   )
+  // }
 
   return (
     <table>
@@ -42,7 +52,7 @@ export const Table = <T,>({ data, columns }: GeneralProps<T>) => {
       </thead>
       <tbody>
         {sortedData(data, sort).map((row, index) => (
-          <tr key={index}>
+          <tr key={index} >
             {columns.map((column) => (
               <td key={column.key}>
                 {
