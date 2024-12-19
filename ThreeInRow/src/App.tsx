@@ -19,5 +19,3 @@ function App() {
 }
 
 export default App;
-// rangos de edades o rangos de balance
-// agregar paginacion, componente pagination = currentPage, nroPage

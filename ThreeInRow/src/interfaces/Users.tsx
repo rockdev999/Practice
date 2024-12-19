@@ -1,10 +1,19 @@
-import { columnInterface } from "./Columns"
+import React, { Dispatch, SetStateAction } from "react"
+import { columnInterface, multiCheckInterface } from "./Columns"
 import { FaCheckCircle } from "react-icons/fa";
 import { FaRegCheckCircle } from "react-icons/fa";
 
-export interface Friends{
+export interface Friend{
     id:number,
     name:string,
+}
+export interface FriendsProps{
+    friends: Friend[];
+    setStateEmpty: Dispatch<SetStateAction<boolean>>;
+    setStateFilling: Dispatch<SetStateAction<boolean>>;
+    setStateFull: Dispatch<SetStateAction<boolean>>;
+    selectedState: boolean[];
+    setSelectedState: Dispatch<SetStateAction<boolean[]>>;
 }
 export interface User {
     id: string,
@@ -13,7 +22,7 @@ export interface User {
     age: number,
     eyeColor: string,
     name: string,
-    friends: Friends[],
+    friends: Friend[],
     favoriteFruit:string
 }
 export interface Props{
@@ -24,6 +33,11 @@ export type Sort = {
     direction:string,
 }
 export const columnsUser: columnInterface<User>[] = [
+    // {
+    //     dataIndex: 'check',
+    //     title: 'State Check',
+    //     key: 'check',
+    // },
     {
         dataIndex: 'name',
         title: 'Name',
@@ -66,8 +80,6 @@ export const columnsUser: columnInterface<User>[] = [
         key: 'Active',
     },
 ]
-
-export interface selectList {
-    parent: string,
-    friends: Friends[],
-}
+// export const multiCheckProp: multiCheckInterface<User> = {
+    
+// }

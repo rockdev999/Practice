@@ -1,90 +1,115 @@
-import React, { useState } from 'react';
-import { FaCheckCircle } from "react-icons/fa";
-import { FaRegCheckCircle } from "react-icons/fa";
-import { TbSortAscending2Filled } from "react-icons/tb";
-import { TbSortAscendingShapesFilled } from "react-icons/tb";
-import './board.css'
+import React, { useState } from "react";
+import { Example } from "../boardversion2/ejemplo";
+import { MdOutlineCheckBox, MdOutlineIndeterminateCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 
-interface Friends{
-    id:number,
-    name:string,
+interface Friends {
+  id: number;
+  name: string;
 }
 interface User {
-    id: string,
-    isActive: boolean,
-    balance: string,
-    age: number,
-    eyeColor: string,
-    name: string,
-    friends: Friends[],
-    favoriteFruit:string
+  id: string;
+  isActive: boolean;
+  balance: string;
+  age: number;
+  eyeColor: string;
+  name: string;
+  friends: Friends[];
+  favoriteFruit: string;
 }
-interface Props{
-    data:User[]
+interface Props {
+  data: User[];
 }
-type Sort = {
-    key: keyof User,
-    direction:string,
-}
+type RowState = "vacío" | "medio" | "lleno";
 
-export const Table:React.FC<Props> = ({data}) =>{
-    const [sort, setSort] = useState<Sort>({key:'name',direction:'asc'});
+export const Table: React.FC<Props> = ({ data }) => {
+  const [rowStates, setRowStates] = useState<RowState[]>(Array(data.length).fill("vacío")); // Estado de cada fila
+  const [checkboxesState, setCheckboxesState] = useState<boolean[][]>(
+    data.map((user) => Array(user.friends.length).fill(false)) // Estado de los checkboxes por fila
+  );
 
-    const handleSortClick=(key: keyof User)=>{
-        let direction = "asc";
-        if (sort.key === key && sort.direction === "asc") {
-            direction = "desc";
-        }
-        setSort({ key , direction });
+  const updateRowState = (rowIndex: number, checkboxes: boolean[]) => {
+    const totalChecked = checkboxes.filter((checked) => checked).length;
+    const newRowStates = [...rowStates];
+
+    if (totalChecked === 0) {
+      newRowStates[rowIndex] = "vacío";
+    } else if (totalChecked === checkboxes.length) {
+      newRowStates[rowIndex] = "lleno";
+    } else {
+      newRowStates[rowIndex] = "medio";
     }
 
-    const sortedData = (data:User[], sort:Sort) => {
-        if (sort.direction==='asc'){
-            return data.sort((a: User,b: User)=>(a[sort.key]>b[sort.key]? 1:-1));
-        }
-        return data.sort((a :User,b: User)=>(a[sort.key]>b[sort.key]? -1:1));
-    }
-    return(
-        <table className='table'>
-            <thead>
-                <tr className='tr_header'>
-                    <th onClick={()=>handleSortClick('name')}>Name
-                        {
-                            sort.key === 'name' && (sort.direction === "asc" ? 
-                                (<TbSortAscending2Filled />) : (<TbSortAscendingShapesFilled />))
-                        }
-                    </th>
-                    <th onClick={()=>handleSortClick('age')}>Age
-                        {sort.key === 'age' && (sort.direction === "asc" ? (<TbSortAscending2Filled />) : (<TbSortAscendingShapesFilled />))}
-                    </th>
-                    <th onClick={()=>handleSortClick('balance')}>Balance
-                        {sort.key === 'balance' && (sort.direction === "asc" ? (<TbSortAscending2Filled />) : (<TbSortAscendingShapesFilled />))}
-                    </th>
-                    <th onClick={()=>handleSortClick('favoriteFruit')}>Favorite Fruit
-                        {sort.key === 'favoriteFruit' && (sort.direction === "asc" ? (<TbSortAscending2Filled />) : (<TbSortAscendingShapesFilled />))}
-                    </th>
-                    <th onClick={()=>handleSortClick('eyeColor')}>Eye Color
-                        {sort.key === 'eyeColor' && (sort.direction === "asc" ? (<TbSortAscending2Filled />) : (<TbSortAscendingShapesFilled />))}
-                    </th>
-                    <th onClick={()=>handleSortClick('friends')}>Friends
-                        {sort.key === 'friends' && (sort.direction === "asc" ? (<TbSortAscending2Filled />) : (<TbSortAscendingShapesFilled />))}
-                    </th>
-                    <th>Active</th>
-                </tr>
-            </thead>
-            <tbody>
-                {sortedData(data,sort).map((user)=>(
-                    <tr key={user.id}>
-                        <td>{user.name}</td>
-                        <td>{user.age}</td>
-                        <td>{user.balance}</td>
-                        <td>{user.favoriteFruit}</td>
-                        <td>{user.eyeColor}</td>
-                        <td>{user.friends.length}</td>
-                        <td>{user.isActive?(<FaCheckCircle />):(<FaRegCheckCircle />)}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    )
-}
+    setRowStates(newRowStates);
+  };
+
+  const handleCheckboxChange = (rowIndex: number, friendIndex: number) => {
+    const newCheckboxesState = [...checkboxesState];
+    newCheckboxesState[rowIndex][friendIndex] = !newCheckboxesState[rowIndex][friendIndex];
+
+    setCheckboxesState(newCheckboxesState);
+    updateRowState(rowIndex, newCheckboxesState[rowIndex]);
+  };
+
+  return (
+    <table className="table">
+      <thead>
+        <tr>
+          <th>Estado</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Balance</th>
+          <th>Favorite Fruit</th>
+          <th>Eye Color</th>
+          <th>Friends</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((user, rowIndex) => (
+          <tr key={user.id}>
+            <td>
+              {rowStates[rowIndex] === "vacío" && <MdOutlineCheckBoxOutlineBlank />}
+              {rowStates[rowIndex] === "medio" && <MdOutlineIndeterminateCheckBox />}
+              {rowStates[rowIndex] === "lleno" && <MdOutlineCheckBox />}
+            </td>
+            <td>{user.name}</td>
+            <td>{user.age}</td>
+            <td>{user.balance}</td>
+            <td>{user.favoriteFruit}</td>
+            <td>{user.eyeColor}</td>
+            <td>
+              <Example
+                friends={user.friends}
+                checkboxesState={checkboxesState[rowIndex]}
+                onCheckboxChange={(friendIndex) => handleCheckboxChange(rowIndex, friendIndex)}
+              />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+// import React from "react";
+
+// interface Props {
+//   friends: { id: number; name: string }[];
+//   checkboxesState: boolean[]; // Estado de los checkboxes
+//   onCheckboxChange: (friendIndex: number) => void; // Función para manejar cambios
+// }
+
+// export const Example: React.FC<Props> = ({ friends, checkboxesState, onCheckboxChange }) => {
+//   return (
+//     <ul>
+//       {friends.map((friend, index) => (
+//         <li key={friend.id}>
+//           <input
+//             type="checkbox"
+//             checked={checkboxesState[index]}
+//             onChange={() => onCheckboxChange(index)} // Llama al controlador del padre
+//           />
+//           {friend.name}
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// };

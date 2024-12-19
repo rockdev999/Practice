@@ -1,43 +1,26 @@
 import { useState, useMemo } from "react";
 import data from '../dummydata (2).json';
 import { Table } from "../components/boardversion2/Table";
-import { columnsUser } from "../interfaces/Users";
+import { columnsUser, selectList } from "../interfaces/Users";
 import '../components/boardversion1/board.css';
 import { Pagination } from "../components/boardversion2/Pagination";
-import { SelectProp } from "../interfaces/Select";
-import { MultiCheckSelect } from "../components/boardversion2/MultiCheckSelect";
-import { CheckboxTree } from "../components/boardversion2/ejemplo";
+// import SelectFriendsComponent from "../components/boardversion2/ejemplo";
+import { MultiCheckSelect } from "../components/boardversion2/MultiCheckSelect2";
+// import { CheckboxTree } from "../components/boardversion2/ejemplo";
 
-
-const data2 = [
-    {
-        id: "1",
-        name: "Parent 1",
-        friends: [
-            { id: "1-1", name: "Friend 1.1" },
-            { id: "1-2", name: "Friend 1.2" },
-        ],
-    },
-    {
-        id: "2",
-        name: "Parent 2",
-        friends: [
-            { id: "2-1", name: "Friend 2.1" },
-            { id: "2-2", name: "Friend 2.2" },
-        ],
-    },
-];
 
 export const BoardVersion2 = () => {
     // rangos de edades o rangos de balance
     // validar negativos y letras, solo numeros
     const [inputFilter, setInputFilter] = useState<string>('');
-    const [dataQuantity, setDataQuantity] = useState<number>(3);
+    const [dataQuantity, setDataQuantity] = useState<number>(7);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [ageRangeFrom, setAgeRangeFrom] = useState<number>(0);
     const [ageRangeTo, setAgeRangeTo] = useState<number>(0);
     const [balanceRangeFrom, setBalanceRangeFrom] = useState<number>(0);
     const [balanceRangeTo, setBalanceRangeTo] = useState<number>(0);
+
+    // const [userSelected, setUserSelected] = useState<selectList>(); 
 
     const filterData = useMemo(() => {
         let filteredData = data;
@@ -113,10 +96,8 @@ export const BoardVersion2 = () => {
                 setCurrentPage={setCurrentPage}
                 numPages={numPages}
             />
-            <MultiCheckSelect items={data[0].friends} father={data[0].name}/>
-            {/* <CheckboxTree data={data2}/> */}
+            {/* <MultiCheckSelect data={data}/> */}
+            {/* <SelectFriendsComponent data={data}/> */}
         </div>
     );
 };
-// multichek por niveles
-// que marque un y apareca sus amigos 

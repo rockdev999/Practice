@@ -54,3 +54,12 @@ tr:nth-child(even) {
     display: flex;
     gap:10px;
 }
+.row{
+    position: relative;
+}
+.multiCheckSelect{
+    position: absolute;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+}

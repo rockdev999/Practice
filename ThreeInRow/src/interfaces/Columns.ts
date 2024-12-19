@@ -1,4 +1,4 @@
-export interface columnInterface <T>{
+export interface columnInterface <T> {
     // Aqui controlo el tipo de dato
     render?: (value: T) => React.ReactNode;
     // aqui va el nombre de como llega en realidad de la bd
@@ -10,7 +10,15 @@ export interface Sort<T> {
     key: keyof T;
     direction: "asc" | "desc";
   }
-export interface PropsGeneral<T> {
+export interface GeneralProps<T> {
     data: T[];
     columns: columnInterface<T>[];
+}
+// export interface multiCheckProp<T> {
+//     data: T;
+//     param: keyof T;
+// }
+export interface multiCheckInterface<T> {
+    data: T;
+    param: keyof T;
 }
