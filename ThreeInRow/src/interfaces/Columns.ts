@@ -1,3 +1,6 @@
+import { Dispatch, SetStateAction } from "react";
+import { selectDataInterface, User } from "./Users";
+
 export interface columnInterface <T> {
     // Aqui controlo el tipo de dato
     render?: (value: T) => React.ReactNode;
@@ -18,7 +21,23 @@ export interface GeneralProps<T> {
 //     data: T;
 //     param: keyof T;
 // }
-export interface multiCheckInterface<T> {
-    data: T;
+export interface multiCheckProp<T> {
+    data: any;
     param: keyof T;
+    position: number;
+    stateCheck: number[];
+    setStateCheck: Dispatch<SetStateAction<number[]>>;
+    multiCheckAll: boolean;
+    selectedData: selectDataInterface[];
+    setSelectedData: React.Dispatch<React.SetStateAction<selectDataInterface[]>>;
 }
+// export interface multiCheckProp<User> {
+//     data: User;
+//     param: keyof User;
+//     position: number;
+//     stateCheck: number[];
+//     setStateCheck: Dispatch<SetStateAction<number[]>>;
+//     multiCheckAll: boolean;
+//     selectedData: selectDataInterface[];
+//     setSelectedData: React.Dispatch<React.SetStateAction<selectDataInterface[]>>;
+// }

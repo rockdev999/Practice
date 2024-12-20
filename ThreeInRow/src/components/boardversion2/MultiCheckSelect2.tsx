@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { User,Friends } from "../../interfaces/Users";
+import { User } from "../../interfaces/Users";
 
 interface SelectFriendsComponentProps {
   data: User[];
 }
 
 export const MultiCheckSelect: React.FC<SelectFriendsComponentProps> = ({ data }) => {
-  const [selectedData, setSelectedData] = useState<{name: string; selectedFriends: Friends[]}[]>([])
+  const [selectedData, setSelectedData] = useState<{name: string; selectedFriends: any[]}[]>([])
 
   const [expandedItems, setExpandedItems] = useState<number[]>([])
 
@@ -16,7 +16,7 @@ export const MultiCheckSelect: React.FC<SelectFriendsComponentProps> = ({ data }
     )
   }
 
-  const handleFriendToggle = (itemName: string, friend: Friends) => {
+  const handleFriendToggle = (itemName: string, friend: any) => {
     setSelectedData((prevSelected) => {
       const existingItem = prevSelected.find((item) => item.name === itemName);
 

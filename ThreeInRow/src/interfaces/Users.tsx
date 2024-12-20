@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react"
-import { columnInterface, multiCheckInterface } from "./Columns"
+import { columnInterface } from "./Columns"
 import { FaCheckCircle } from "react-icons/fa";
 import { FaRegCheckCircle } from "react-icons/fa";
 
@@ -80,6 +80,17 @@ export const columnsUser: columnInterface<User>[] = [
         key: 'Active',
     },
 ]
-// export const multiCheckProp: multiCheckInterface<User> = {
-    
-// }
+
+export interface selectFriend {
+    id: number;
+    name: string;
+  }
+  
+export interface selectDataInterface {
+    id: string;
+    name: string;
+    selectFriends: selectFriend[];
+}
+export interface selectDataProp {
+    data: selectDataInterface[];
+}

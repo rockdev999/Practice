@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import data from '../dummydata (2).json';
 import { Table } from "../components/boardversion2/Table";
-import { columnsUser, selectList } from "../interfaces/Users";
+import { columnsUser } from "../interfaces/Users";
 import '../components/boardversion1/board.css';
 import { Pagination } from "../components/boardversion2/Pagination";
 // import SelectFriendsComponent from "../components/boardversion2/ejemplo";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Example } from "../boardversion2/ejemplo";
+// import { Example } from "../boardversion2/ejemplo";
 import { MdOutlineCheckBox, MdOutlineIndeterminateCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 
 interface Friends {
@@ -77,11 +77,11 @@ export const Table: React.FC<Props> = ({ data }) => {
             <td>{user.favoriteFruit}</td>
             <td>{user.eyeColor}</td>
             <td>
-              <Example
+              {/* <Example
                 friends={user.friends}
                 checkboxesState={checkboxesState[rowIndex]}
                 onCheckboxChange={(friendIndex) => handleCheckboxChange(rowIndex, friendIndex)}
-              />
+              /> */}
             </td>
           </tr>
         ))}
