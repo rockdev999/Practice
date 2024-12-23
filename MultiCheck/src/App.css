@@ -1,0 +1,29 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.select{
+  background-color: aquamarine;
+  position:absolute
+}
+.check {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.parentCheck {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.childrenCheck {
+  width: 180px;
+  background-color: aqua;
+  position: absolute;
+  left: 150px;
+}
