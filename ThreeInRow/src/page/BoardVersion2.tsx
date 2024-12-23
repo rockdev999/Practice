@@ -13,7 +13,7 @@ export const BoardVersion2 = () => {
     // rangos de edades o rangos de balance
     // validar negativos y letras, solo numeros
     const [inputFilter, setInputFilter] = useState<string>('');
-    const [dataQuantity, setDataQuantity] = useState<number>(7);
+    const [dataQuantity, setDataQuantity] = useState<number>(2);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [ageRangeFrom, setAgeRangeFrom] = useState<number>(0);
     const [ageRangeTo, setAgeRangeTo] = useState<number>(0);
@@ -96,8 +96,7 @@ export const BoardVersion2 = () => {
                 setCurrentPage={setCurrentPage}
                 numPages={numPages}
             />
-            {/* <MultiCheckSelect data={data}/> */}
-            {/* <SelectFriendsComponent data={data}/> */}
+            {/* AQUI DEBERIA IR EL MULTICHECK?????*/}
         </div>
     );
 };

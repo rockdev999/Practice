@@ -60,7 +60,7 @@ export const TrafficLigth = () => {
             <button onClick={()=>{setStatus(true)}}>Play</button>
             <button onClick={()=>{setStatus(false)}}>Stop</button>
             <button onClick={()=>{
-                setColor(1)
+                setColor(Color.RED)
             }}>Reset</button>
             </div>
         </div>
